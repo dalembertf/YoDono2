@@ -1,13 +1,117 @@
 <resources>
-    <string name="app_name">YoDono2</string>
+    <string name="app_name">YoDono</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">YoDono</string>
+    <string name="nav_header_subtitle">Bienvenido</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuracion</string>
+    <string name="action_info">Informacion</string>
+    <string name="bienvenida">Bienvenido al primer sistema centralizado de recepción de donaciones de sangre.</string>
+    <string name="inicio_sesion">Iniciar sesión</string>
+    <string name="registro">Quiero registrarme</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Nueva Solicitud</string>
+    <string name="menu_slideshow">Informacion</string>
+
+
+    <string name="campo_nombre">Nombre:</string>
+    <string name="campo_fecha_nacimiento">Fecha Nacimiento:</string>
+    <string name="campo_telefono">Telefono:</string>
+    <string name="campo_email">E-Mail:</string>
+    <string name="campo_descripcion_contacto">Apellido:</string>
+    <string name="texto_boton_confirmar">Enviar Datos</string>
+    <string name="titulo_confirmar_datos">Confirmar Datos</string>
+    <string name="boton_modificar">Modificar</string>
+    <string name="formulario_datos_persona">Formulario Datos Persona</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_cedula">Cédula de identidad</string>
+    <string name="prompt_contrasena">Contraseña</string>
+    <string name="prompt_contrasena_confirmacion">Repita su contraseña</string>
+    <string name="prompt_registro_nombre">Nombre</string>
+    <string name="prompt_registro_apellido">Apellido</string>
+    <string name="prompt_registro_email">Email</string>
+    <string name="prompt_registro_telefono">Número de teléfono</string>
+    <string name="registro_departamento">Departamento</string>
+    <string name="registro_grupo_sanguineo">Grupo Sanguineo</string>
+    <string name="registro_siguiente">Siguiente paso</string>
+    <string name="registro_enviar">Enviar</string>
+    <string name="prompt_edad">Edad</string>
+    <string name="prompt_fecha_limite">Fecha limite</string>
+    <string name="prompt_hospital">Hospital</string>
+    <string name="prompt_donantes">Cantidad de donantes</string>
+    <string name="prompt_motivo">Motivo</string>
+
+    <string name="perfil_editar">Editar</string>
+    <string name="perfil_cancelar">Cancelar</string>
+    <string name="perfil_aplicar">Aplicar</string>
+    <string name="solicitar_aceptar">Aceptar</string>
+
+    <string name="buscardonante">Buscar donante</string>
+    <string name="titlefechalimite">Fecha límite</string>
+    <string name="titledepartamento">Departamento</string>
+    <string name="titledonantesreq">Donantes requeridos</string>
+    <string name="titlegrupo">Grupo sanguíneo</string>
+    <string name="titleSolicitud">Solicitud</string>
+
+
+    <string-array name="array_departamentos">
+        <item>Artigas</item>
+        <item>Canelones</item>
+        <item>Cerro Largo</item>
+        <item>Colonia</item>
+        <item>Durazno</item>
+        <item>Flores</item>
+        <item>Florida</item>
+        <item>Lavalleja</item>
+        <item>Maldonado</item>
+        <item>Montevideo</item>
+        <item>Paysandú</item>
+        <item>Río Negro</item>
+        <item>Rivera</item>
+        <item>Rocha</item>
+        <item>Salto</item>
+        <item>San José</item>
+        <item>Soriano</item>
+        <item>Tacuarembó</item>
+        <item>Treinta y Tres </item>
+    </string-array>
+
+
+    <string-array name="array_grupos_sanguineos">
+        <item>O-</item>
+        <item>O+</item>
+        <item>A-</item>
+        <item>A+</item>
+        <item>B-</item>
+        <item>B+</item>
+        <item>AB-</item>
+        <item>AB+</item>
+    </string-array>
+
+    <string-array name="array_cantidad_donantes">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
 </resources>

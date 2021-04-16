@@ -6,15 +6,31 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/nav_solicitud"
+
             android:title="@string/menu_gallery" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/nav_mi_solicitud"
+
+            android:title="Mis Solicitudes" />
+        <item
+            android:id="@+id/nav_buscar_donante"
+
+            android:title="Buscar Donantes" />
+        <item
+            android:id="@+id/informacion"
+
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_centros"
+
+            android:title="Ver centros de donación" />
+        <item
+            android:id="@+id/perfil"
+
+            android:title="Perfil de Usuario" />
     </group>
 </menu>

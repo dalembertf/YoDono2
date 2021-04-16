@@ -37,7 +37,42 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.synnapps:carouselview:0.1.4'
+    //Dependencias para ReclycerView:
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.gridlayout:gridlayout:1.0.0"
+
+
+    // dependencias para Room
+    def room_version = "2.2.6"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+    // optional - Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+
+
+    // Android Debug Database
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+
+    // https://stackoverflow.com/questions/52537638/how-to-resolve-noclassdeffounderror-failed-resolution-of-landroid-view-viewon
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == "androidx.appcompat") {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion "1.+"
+                }
+            }
+        }
+    }
 }
