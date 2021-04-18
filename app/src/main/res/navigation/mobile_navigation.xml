@@ -25,5 +25,15 @@
         android:name="com.example.yodono2.Informacion"
         android:label="fragment_informacion"
         tools:layout="@layout/fragment_informacion" />
+    <activity
+        android:id="@+id/welcome"
+        android:name="com.example.yodono2.Welcome"
+        android:label="activity_welcome"
+        tools:layout="@layout/activity_welcome" />
+    <fragment
+        android:id="@+id/solicitudNueva"
+        android:name="com.example.yodono2.SolicitudNueva"
+        android:label="fragment_solicitud_nueva"
+        tools:layout="@layout/fragment_solicitud_nueva" />
 
 </navigation>
