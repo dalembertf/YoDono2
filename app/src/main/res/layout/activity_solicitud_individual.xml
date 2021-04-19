@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SolicitudIndividual">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titleSolicitudID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="42dp"
+            android:text="@string/titleSolicitud"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/SolicitudIndividualID"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/titleSolicitudID"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="79dp"
+            android:layout_toEndOf="@+id/titleSolicitudID"
+            android:text="0001"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TitleFechaLim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="112dp"
+            android:textSize="24sp"
+            android:text="Fecha límite" />
+
+        <TextView
+            android:id="@+id/SolicitudIndividualFechaLim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/TitleFechaLim"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/TitleFechaLim"
+            android:textColor="#D32F2F"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="01/01/2021" />
+
+        <TextView
+            android:id="@+id/titleDepartamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TitleFechaLim"
+            android:layout_alignStart="@+id/TitleFechaLim"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:textSize="24sp"
+            android:text="@string/titledepartamento" />
+
+        <TextView
+            android:id="@+id/SolicitudIndividualDepartamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/titleDepartamento"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/titleDepartamento"
+            android:text="Montevideo"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/titleGrupo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleDepartamento"
+            android:layout_alignStart="@+id/titleDepartamento"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:textSize="24sp"
+            android:text="@string/titlegrupo" />
+
+        <TextView
+            android:id="@+id/SolicitudIndividualGrupo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/titleGrupo"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/titleGrupo"
+            android:text="A+"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/titleDonantesReq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleGrupo"
+            android:layout_alignStart="@+id/titleGrupo"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:textSize="24sp"
+            android:text="@string/titledonantesreq" />
+
+        <TextView
+            android:id="@+id/SolicitudIndividualDonantesReq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/titleDonantesReq"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/titleDonantesReq"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:text="de 12" />
+
+        <TextView
+            android:id="@+id/SolicitudIndividualDonaciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/titleDonantesReq"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/titleDonantesReq"
+            android:textColor="#D32F2F"
+            android:textSize="24sp"
+            android:text="12" />
+
+        <TextView
+            android:id="@+id/titleHospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleDonantesReq"
+            android:layout_alignStart="@+id/titleDonantesReq"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:textSize="24sp"
+            android:text="@string/titleHospital" />
+
+        <TextView
+            android:id="@+id/SolicitudIndividualHospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/titleHospital"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/titleHospital"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:text="H. Pereira Rosell" />
+
+        <TextView
+            android:id="@+id/titleMotivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleHospital"
+            android:layout_alignStart="@+id/titleHospital"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:textSize="24sp"
+            android:text="@string/titleMotivo" />
+
+        <TextView
+            android:id="@+id/SolicitudIndividualMotivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/titleMotivo"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/titleMotivo"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:text="Cirugia" />
+
+        <Button
+            android:id="@+id/BotonParticiparSolicitud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleMotivo"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="116dp"
+            android:layout_marginTop="40dp"
+            android:text="Quiero participar" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

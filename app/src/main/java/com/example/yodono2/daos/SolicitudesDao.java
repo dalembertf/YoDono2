@@ -26,4 +26,6 @@ public interface SolicitudesDao {
     @Query("SELECT * FROM Solicitudes")
     LiveData<List<Solicitudes>> getAllSolicitudes();
 
+    @Query("SELECT * FROM  Solicitudes WHERE cedula != :cedula")
+    LiveData<List<Solicitudes>> getSolicitudesNotLogueado( String cedula );
 }

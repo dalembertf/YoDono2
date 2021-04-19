@@ -6,12 +6,12 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import java.util.List;
-
 import com.example.yodono2.BD.YoDonoRepositorio;
-import com.example.yodono2.Entidades.DonanteConSolicitudes;
 import com.example.yodono2.Entidades.Donantes;
+import com.example.yodono2.Entidades.Relaciones.SolicitudConDonantes;
 import com.example.yodono2.Entidades.Solicitudes;
+
+import java.util.List;
 
 public class YoDonoViewModel extends AndroidViewModel {
 
@@ -65,6 +65,21 @@ public class YoDonoViewModel extends AndroidViewModel {
         return repositorio.getSolicitudes();
     }
 
+    public LiveData<List<Solicitudes>> getSolicitudesNotLogueado( String cedula ) {
+        return repositorio.getSolicitudesNotLogueado( cedula );
+    }
+
+    public List<SolicitudConDonantes> getDonaciones() {
+        return repositorio.getDonaciones();
+    }
+
+    public List<SolicitudConDonantes> getDonaciones( Integer id ) {
+        return repositorio.getDonaciones( id );
+    }
+
+    public void agregarDonacion( SolicitudConDonantes solicitudConDonantes ) {
+        repositorio.agregarDonacion( solicitudConDonantes );
+    }
+
 
 }
-

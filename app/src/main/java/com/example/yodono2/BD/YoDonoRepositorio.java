@@ -8,25 +8,44 @@ import java.util.List;
 
 import com.example.yodono2.Entidades.DonanteConSolicitudes;
 import com.example.yodono2.Entidades.Donantes;
+import com.example.yodono2.Entidades.Relaciones.SolicitudConDonantes;
 import com.example.yodono2.Entidades.Solicitudes;
 import com.example.yodono2.daos.DonanteDao;
+import com.example.yodono2.daos.SolicitudConDonantesDao;
 import com.example.yodono2.daos.SolicitudesDao;
-
 public class YoDonoRepositorio {
 
-    private com.example.yodono2.daos.DonanteDao donanteDao;
+    private DonanteDao donanteDao;
     private LiveData<List<Donantes>> listaDonantes;
 
     private SolicitudesDao solicitudesDao;
     private LiveData<List<Solicitudes>> listaSolicitudes;
 
+    private SolicitudConDonantesDao solicitudConDonantesDao;
+    private List<SolicitudConDonantes> listaSolicitudConDonantes;
+
     public YoDonoRepositorio(Application application) {
         AppDatabase database = AppDatabase.getInstance(application);
         donanteDao = database.getDonanteDao();
         solicitudesDao = database.getSolicitudesDao();
+        solicitudConDonantesDao = database.getSolicitudesConDonantesDao();
 
         listaDonantes = donanteDao.getAllDonanantes();
         listaSolicitudes = solicitudesDao.getAllSolicitudes();
+
+        listaSolicitudConDonantes = solicitudConDonantesDao.getDonaciones();
+    }
+
+    public List<SolicitudConDonantes> getDonaciones() {
+        return this.listaSolicitudConDonantes;
+    }
+
+    public List<SolicitudConDonantes> getDonaciones( Integer id ) {
+        return solicitudConDonantesDao.getDonaciones( id );
+    }
+
+    public void agregarDonacion( SolicitudConDonantes solicitudConDonantes ) {
+        solicitudConDonantesDao.agregar( solicitudConDonantes );
     }
 
     public void insert(Donantes donante) {
@@ -37,20 +56,20 @@ public class YoDonoRepositorio {
         new UpdateDonanteAsyncTask(donanteDao).execute(donante);
     }
 
-    public Donantes buscarDonante(String cedula) {
-        return donanteDao.buscarDonante(cedula);
+    public Donantes buscarDonante( String cedula ) {
+        return donanteDao.buscarDonante( cedula );
     }
 
-    public Donantes buscarDonante(String cedula, String contrasena) {
-        return donanteDao.buscarDonante(cedula);
+    public Donantes buscarDonante( String cedula, String contrasena ) {
+        return donanteDao.buscarDonante( cedula );
     }
 
     public LiveData<List<Donantes>> getListaOtrosDonantes(String cedula) {
-        return donanteDao.buscarDonantesNotLogged(cedula);
+        return donanteDao.buscarDonantesNotLogged( cedula );
     }
 
-    public LiveData<List<Donantes>> getDonantesPorFiltro(String departamento, String grupo_sanguineo, String cedula) {
-        return donanteDao.getDonantesPorFiltros(departamento, grupo_sanguineo, cedula);
+    public LiveData<List<Donantes>> getDonantesPorFiltro( String departamento, String grupo_sanguineo, String cedula ) {
+        return donanteDao.getDonantesPorFiltros( departamento, grupo_sanguineo, cedula );
     }
 
     public LiveData<List<Donantes>> getAllDonantes() {
@@ -60,7 +79,7 @@ public class YoDonoRepositorio {
     private static class InsertDonanteAsyncTask extends AsyncTask<Donantes, Void, Void> {
         private DonanteDao donanteDao;
 
-        private InsertDonanteAsyncTask(DonanteDao donanteDao) {
+        private InsertDonanteAsyncTask( DonanteDao donanteDao ) {
             this.donanteDao = donanteDao;
         }
 
@@ -74,7 +93,7 @@ public class YoDonoRepositorio {
     private static class UpdateDonanteAsyncTask extends AsyncTask<Donantes, Void, Void> {
         private DonanteDao donanteDao;
 
-        private UpdateDonanteAsyncTask(DonanteDao donanteDao) {
+        private UpdateDonanteAsyncTask( DonanteDao donanteDao ) {
             this.donanteDao = donanteDao;
         }
 
@@ -92,7 +111,7 @@ public class YoDonoRepositorio {
     private static class InsertSolicitudAsyncTask extends AsyncTask<Solicitudes, Void, Void> {
         private SolicitudesDao solicitudesDao;
 
-        private InsertSolicitudAsyncTask(SolicitudesDao solicitudesDao) {
+        private InsertSolicitudAsyncTask( SolicitudesDao solicitudesDao ) {
             this.solicitudesDao = solicitudesDao;
         }
 
@@ -107,7 +126,11 @@ public class YoDonoRepositorio {
         return solicitudesDao.getAllSolicitudes();
     }
 
-    public LiveData<List<Solicitudes>> getSolicitudesDonante(String cedula) {
-        return solicitudesDao.getSolicitudDeDonante(cedula);
+    public LiveData<List<Solicitudes>> getSolicitudesDonante( String cedula ) {
+        return  solicitudesDao.getSolicitudDeDonante( cedula );
+    }
+
+    public LiveData<List<Solicitudes>> getSolicitudesNotLogueado( String cedula ) {
+        return solicitudesDao.getSolicitudesNotLogueado( cedula );
     }
 }
