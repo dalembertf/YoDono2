@@ -56,6 +56,8 @@
     <string name="titledonantesreq">Donantes requeridos</string>
     <string name="titlegrupo">Grupo sanguíneo</string>
     <string name="titleSolicitud">Solicitud</string>
+    <string name="titleHospital">Hospital</string>
+    <string name="titleMotivo">Motivo</string>
 
 
     <string-array name="array_departamentos">
@@ -114,6 +116,5 @@
         <item>19</item>
         <item>20</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
+

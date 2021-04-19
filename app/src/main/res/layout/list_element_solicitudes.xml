@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/CVSolicitudes"
+android:layout_height="wrap_content"
+android:layout_width="match_parent"
+android:animateLayoutChanges="true"
+app:cardCornerRadius="20dp"
+app:cardElevation="4dp"
+app:cardUseCompatPadding="true"
+android:gravity="center_horizontal"
+android:layout_marginRight="3dp"
+android:layout_marginLeft="3dp"
+android:layout_marginTop="2dp"
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/titleSolicitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="7dp"
+        android:text="@string/titleSolicitud" />
+
+    <TextView
+        android:id="@+id/solicitudesDepartamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleDepartamento"
+        android:layout_alignStart="@+id/titleSolicitud"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-1dp"
+        android:text="Montevideo"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/titleDepartamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/solicitudesFechaLim"
+        android:layout_alignStart="@+id/titleSolicitud"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="7dp"
+        android:textColor="#9C9B9B"
+        android:textSize="10sp"
+        android:text="@string/titledepartamento" />
+
+    <TextView
+        android:id="@+id/solicitudesFechaLim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleFechaLim"
+        android:layout_alignStart="@+id/TitleFechaLim"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:textColor="#D32F2F"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="01/01/2021" />
+
+    <TextView
+        android:id="@+id/TitleFechaLim"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleSolicitud"
+        android:layout_alignStart="@+id/titleSolicitud"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#9C9B9B"
+        android:textSize="10sp"
+        android:text="@string/titlefechalimite" />
+
+    <TextView
+        android:id="@+id/solicitudesNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/titleSolicitud"
+        android:text="#0001"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/titleGrupo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/solicitudesDepartamento"
+        android:layout_alignStart="@+id/titleDonantesReq"
+        android:layout_alignTop="@+id/solicitudesDepartamento"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="-13dp"
+        android:layout_marginBottom="-1dp"
+        android:textColor="#9C9B9B"
+        android:textSize="10sp"
+        android:text="@string/titlegrupo" />
+
+    <TextView
+        android:id="@+id/solicitudesGrupo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleDepartamento"
+        android:layout_alignStart="@+id/titleGrupo"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-1dp"
+        android:text="A+"
+        android:layout_marginBottom="7dp"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/titleDonantesReq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/solicitudesFechaLim"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="43dp"
+        android:textColor="#9C9B9B"
+        android:textSize="10sp"
+        android:text="@string/titledonantesreq" />
+
+    <TextView
+        android:id="@+id/solicitudesDonantesReq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleDonantesReq"
+        android:layout_alignStart="@+id/titleDonantesReq"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:textColor="#D32F2F"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="123" />
+
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

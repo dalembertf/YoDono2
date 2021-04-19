@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YoDono2">
         <activity android:name=".RegistroPaso_2"></activity>
-        <activity android:name=".Registro_Paso_2" />
         <activity android:name=".RegistroPaso_1" />
+        <activity android:name=".SolicitudIndividual" />
         <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

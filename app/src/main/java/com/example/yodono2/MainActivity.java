@@ -1,13 +1,22 @@
 package com.example.yodono2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
+import com.example.yodono2.Entidades.Donantes;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,35 +25,76 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
+
+    private Donantes donante_logueado;
+    private TextView bienvenida;
+    private DrawerLayout drawer;
+
+    private YoDonoViewModel yoDonoViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle( this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close );
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //        .setAction("Action", null).show();
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.ContentMain,new SolicitudNueva()).commit();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+
+        if ( savedInstanceState == null )
+        {
+            //getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_container,
+            navigationView.setCheckedItem(R.id.nav_solicitud_nueva);
+        }
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.perfil, R.id.informacion, R.id.solicitudNueva)
+                R.id.nav_home, R.id.perfil, R.id.informacion, R.id.nav_solicitud_nueva)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        Intent intent = getIntent();
+        Bundle bd = intent.getExtras();
+        donante_logueado = (Donantes)bd.get("Donante");
+        String nombre_donante = donante_logueado.getNombre();
+
+        // obtengo el view correspondiente a nav_header_main.xml
+        View headerLayout = navigationView.getHeaderView(0);
+
+        // seteo nombre de donante en menú
+        bienvenida = (TextView) headerLayout.findViewById(R.id.textView);
+        bienvenida.setText( bienvenida.getText() + " " + nombre_donante );
+
+
+        yoDonoViewModel = new ViewModelProvider(this,
+                ViewModelProvider.AndroidViewModelFactory
+                        .getInstance(this.getApplication()))
+                .get(YoDonoViewModel.class);
+
     }
 
     @Override
@@ -59,5 +109,52 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent i;
+
+        switch ( item.getItemId() )
+        {
+            case R.id.nav_solicitud_nueva:
+                Log.v("MENU", "entra");
+                getSupportFragmentManager().beginTransaction().replace(R.id.ContentMain,new SolicitudNueva()).commit();
+                break;
+
+            //case R.id.nav_perfil:
+            //    i = new Intent(MainActivity.this, Perfil.class);
+            //    startActivity(i);
+            //    break;
+
+            case R.id.nav_buscar_donante:
+                //i = new Intent(MainActivity.this, ListaDonantes.class);
+                //i.putExtra( "Donante", donante_logueado );
+                //startActivity(i);
+                break;
+            case R.id.nav_centros:
+                //getSupportFragmentManager().beginTransaction().replace(R.id.ContentMain,new MapaCentros()).commit();
+                break;
+            case R.id.nav_home:
+                //getSupportFragmentManager().beginTransaction().replace(R.id.ContentMain,new HomeFragment()).commit();
+                break;
+            //case R.id.nav_info:
+            //    //getSupportFragmentManager().beginTransaction().replace(R.id.ContentMain,new Info()).commit();
+            //    break;
+        }
+
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if ( drawer.isDrawerOpen(GravityCompat.START ))
+        {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+        else
+        {
+            super.onBackPressed();
+        }
     }
 }
