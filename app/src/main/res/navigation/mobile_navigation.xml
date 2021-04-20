@@ -13,12 +13,12 @@
     <fragment
         android:id="@+id/perfil"
         android:name="com.example.yodono2.Perfil"
-        android:label="fragment_perfil"
+        android:label="Perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment
         android:id="@+id/perfilEditar"
         android:name="com.example.yodono2.PerfilEditar"
-        android:label="fragment_perfil_editar"
+        android:label="Editar Perfil"
         tools:layout="@layout/fragment_perfil_editar" />
     <fragment
         android:id="@+id/informacion"
@@ -33,13 +33,8 @@
     <fragment
         android:id="@+id/solicitudNueva"
         android:name="com.example.yodono2.SolicitudNueva"
-        android:label="fragment_solicitud_nueva"
+        android:label="Nueva Solicitud"
         tools:layout="@layout/fragment_solicitud_nueva" />
-    <fragment
-        android:id="@+id/busquedaDonantes"
-        android:name="com.example.yodono2.BusquedaDonantes"
-        android:label="fragment_busqueda_donantes"
-        tools:layout="@layout/fragment_busqueda_donantes" />
     <fragment
         android:id="@+id/donantesFiltros"
         android:name="com.example.yodono2.DonantesFiltros"
