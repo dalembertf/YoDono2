@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/informacion"
         android:name="com.example.yodono2.Informacion"
-        android:label="fragment_informacion"
+        android:label="Info"
         tools:layout="@layout/fragment_informacion" />
     <activity
         android:id="@+id/welcome"
@@ -35,5 +35,15 @@
         android:name="com.example.yodono2.SolicitudNueva"
         android:label="fragment_solicitud_nueva"
         tools:layout="@layout/fragment_solicitud_nueva" />
+    <fragment
+        android:id="@+id/busquedaDonantes"
+        android:name="com.example.yodono2.BusquedaDonantes"
+        android:label="fragment_busqueda_donantes"
+        tools:layout="@layout/fragment_busqueda_donantes" />
+    <fragment
+        android:id="@+id/donantesFiltros"
+        android:name="com.example.yodono2.DonantesFiltros"
+        android:label="Busqueda Donantes"
+        tools:layout="@layout/fragment_donantes_filtros" />
 
 </navigation>
