@@ -16,6 +16,9 @@
     <string name="menu_gallery">Nueva Solicitud</string>
     <string name="menu_slideshow">Informacion</string>
 
+    <string name="channel_name">Channel Name</string>
+    <string name="channel_description">Notificaciones</string>
+
 
     <string name="campo_nombre">Nombre:</string>
     <string name="campo_fecha_nacimiento">Fecha Nacimiento:</string>
