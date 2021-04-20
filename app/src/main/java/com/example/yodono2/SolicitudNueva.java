@@ -70,7 +70,7 @@ public class SolicitudNueva extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView miGrupoSanguineo = (TextView)view.findViewById(R.id.text_grupoSanguineo);
+        TextView miGrupoSanguineo = (TextView)view.findViewById(R.id.text_miGrupoSanguineo);
         miGrupoSanguineo.setText(donante_logueado.getGrupo_Sanguineo());
 
         number_cantidad_donantes = (HorizontalNumberPicker) view.findViewById(R.id.number_donantes);
