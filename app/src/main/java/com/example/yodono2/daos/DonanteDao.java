@@ -47,4 +47,8 @@ public interface DonanteDao {
     @Transaction
     @Query("SELECT * FROM Donantes WHERE departamento = :departamento AND grupo_sanguineo = :grupo_sanguineo and cedula != :cedula")
     LiveData<List<Donantes>> getDonantesPorFiltros( String departamento, String grupo_sanguineo, String cedula );
+
+    @Transaction
+    @Query("SELECT * FROM Donantes WHERE cedula != :cedula and grupo_sanguineo IN (:grupos)")
+    LiveData<List<Donantes>> getDonantesCompatibles( String cedula, List<String> grupos );
 }

@@ -76,6 +76,10 @@ public class YoDonoRepositorio {
         return listaDonantes;
     }
 
+    public LiveData<List<Donantes>> getDonantesCompatibles( String cedula, List<String> grupos ) {
+        return donanteDao.getDonantesCompatibles( cedula, grupos );
+    }
+
     private static class InsertDonanteAsyncTask extends AsyncTask<Donantes, Void, Void> {
         private DonanteDao donanteDao;
 

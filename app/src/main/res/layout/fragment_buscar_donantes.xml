@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/ListaDonantes"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".DonantesFiltros">
+tools:context=".BuscarDonantes">
 
 <LinearLayout
     android:id="@+id/tvListaDonantes"
@@ -42,6 +42,27 @@ tools:context=".DonantesFiltros">
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
     </LinearLayout>
+
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_aplicar_filtros"
+                android:text="Aplicar filtros" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_compatibles"
+            android:text="Compatibles" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lista_compatibles"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
 

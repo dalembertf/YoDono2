@@ -58,6 +58,10 @@ public class YoDonoViewModel extends AndroidViewModel {
         return lista_donantes;
     }
 
+    public LiveData<List<Donantes>> getDonantesCompatibles( String cedula, List<String> grupos) {
+        return repositorio.getDonantesCompatibles( cedula, grupos );
+    }
+
     //-------------------SOLICITUDES---------------------------------//
     public void insert( Solicitudes solicitud ) { repositorio.insert(solicitud);}
 
