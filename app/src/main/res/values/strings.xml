@@ -62,6 +62,13 @@
     <string name="titleHospital">Hospital</string>
     <string name="titleMotivo">Motivo</string>
 
+    <string name="titlePerfilCedula">Cédula de identidad:</string>
+    <string name="titlePerfilNombre">Nombre:</string>
+    <string name="titlePerfilApellido">Apellido:</string>
+    <string name="titlePerfilDepartamento">Departamento:</string>
+    <string name="titlePerfilGrupo">Grupo sanguíneo:</string>
+    <string name="titlePerfilEmail">E-Mail:</string>
+    <string name="titlePerfilTelefono">Número de teléfono</string>
 
     <string-array name="array_departamentos">
         <item>Artigas</item>

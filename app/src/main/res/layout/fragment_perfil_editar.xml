@@ -34,69 +34,100 @@
             android:textSize="20dp"
             android:layout_marginBottom="20dp"/>
 
-        <EditText
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_registro_cedula"
-            android:hint="@string/prompt_cedula"
-            android:inputType="number"
-            android:maxLength="8"
-            android:selectAllOnFocus="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginBottom="10dp"
+            >
 
-        <EditText
+            <TextView
+                android:id="@+id/titlePerfilEmail"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/titlePerfilEmail"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editPerfilEmail"
+                android:hint="@string/prompt_registro_email"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_registro_nombre"
-            android:hint="@string/prompt_registro_nombre"
-            android:inputType="textPersonName"
-            android:selectAllOnFocus="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginBottom="10dp">
 
-        <EditText
+            <TextView
+                android:id="@+id/titlePerfilTelefono"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/titlePerfilTelefono"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editPerfilTelefono"
+                android:hint="@string/prompt_registro_telefono"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_registro_apellido"
-            android:hint="@string/prompt_registro_apellido"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginBottom="10dp">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_registro_email"
-            android:hint="@string/prompt_registro_email"
-            android:inputType="textEmailAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/titlePerfilContrasena"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Contraseña:"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editPerfilContrasena"
+                android:hint="@string/prompt_contrasena"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_registro_telefono"
-            android:hint="@string/prompt_registro_telefono"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editPerfilConfirmarContrasena"
+                    android:hint="@string/prompt_contrasena_confirmacion"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+</LinearLayout>
 
 
-        <Spinner
-            android:id="@+id/spinner_departamentos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spinner_grupo_sanguineos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+
 
         <LinearLayout
             android:layout_width="match_parent"

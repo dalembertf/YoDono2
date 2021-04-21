@@ -34,69 +34,180 @@
             android:textSize="20dp"
             android:layout_marginBottom="20dp"/>
 
+        <!-- Datos perfil -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/titlePerfilCedula"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/text_registro_cedula"
-            android:hint="@string/prompt_cedula"
-            android:inputType="number"
-            android:maxLength="8"
-            android:selectAllOnFocus="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_registro_nombre"
-            android:hint="@string/prompt_registro_nombre"
-            android:inputType="textPersonName"
-            android:selectAllOnFocus="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:text="@string/titlePerfilCedula"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:textSize="14sp"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/PerfilCedula"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_registro_apellido"
-            android:hint="@string/prompt_registro_apellido"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:text="1234567-8"
+            android:textSize="20sp"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/titlePerfilNombre"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/text_registro_email"
-            android:hint="@string/prompt_registro_email"
-            android:inputType="textEmailAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:text="@string/titlePerfilNombre"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:textSize="14sp"/>
 
         <TextView
+            android:id="@+id/PerfilNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:text="Juan Pedro"
+            android:textSize="20sp"/>
+
+
+    </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_registro_telefono"
-            android:hint="@string/prompt_registro_telefono"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/titlePerfilApellido"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/titlePerfilApellido"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/PerfilApellido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="Perez Rodriguez"
+                android:textSize="20sp"/>
 
 
-        <Spinner
-            android:id="@+id/spinner_departamentos"
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
 
-        <Spinner
-            android:id="@+id/spinner_grupo_sanguineos"
+            <TextView
+                android:id="@+id/titlePerfilDepartamento"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/titlePerfilDepartamento"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/PerfilDepartamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="Montevideo"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/titlePerfilGrupo"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/titlePerfilGrupo"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/PerfilGrupo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="A+"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/titlePerfilEmail"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/titlePerfilEmail"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/PerfilEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="juanpedroperez@gmail.com"
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/titlePerfilTelefono"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/titlePerfilTelefono"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/PerfilTelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="091234567"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

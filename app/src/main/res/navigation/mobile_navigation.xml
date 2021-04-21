@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/mapaCentros"
         android:name="com.example.yodono2.mapaCentros"
-        android:label="Mapa Centros"
+        android:label="Centros de donación"
         tools:layout="@layout/fragment_mapa_centros" />
 
 </navigation>
