@@ -40,5 +40,10 @@
         android:name="com.example.yodono2.DonantesFiltros"
         android:label="Busqueda Donantes"
         tools:layout="@layout/fragment_donantes_filtros" />
+    <fragment
+        android:id="@+id/mapaCentros"
+        android:name="com.example.yodono2.mapaCentros"
+        android:label="Mapa Centros"
+        tools:layout="@layout/fragment_mapa_centros" />
 
 </navigation>
