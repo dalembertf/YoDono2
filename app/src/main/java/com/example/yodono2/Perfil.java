@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.yodono2.Entidades.Donantes;
@@ -105,16 +106,17 @@ public class Perfil extends Fragment {
 
 
 
-        Button btnEditar = view.findViewById((R.id.boton_perfil_editar));
+
+        //Button btnEditar = view.findViewById((R.id.boton_perfil_editar));
 
         final NavController navController = Navigation.findNavController(view);
 
-        btnEditar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.perfilEditar);
-            }
-        });
+        //btnEditar.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        navController.navigate(R.id.perfilEditar);
+        //    }
+        //});
 
     }
 }

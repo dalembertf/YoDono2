@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/welcome_logo"
             android:layout_width="264dp"
-            android:layout_height="107dp"
+            android:layout_height="78dp"
             app:srcCompat="@drawable/perfil"
             tools:layout_editor_absoluteX="48dp"
             tools:layout_editor_absoluteY="64dp" />
@@ -25,13 +25,6 @@
             android:layout_height="wrap_content"
             android:text="Mi Perfil"
             android:textSize="30dp"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Datos personales"
-            android:textSize="20dp"
             android:layout_marginBottom="20dp"/>
 
         <!-- Datos perfil -->
@@ -228,6 +221,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:theme="@style/SCBSwitch"
+                android:checked="true"
                 android:text="" />
         </LinearLayout>
 
@@ -237,15 +232,7 @@
             android:layout_height="0dip"
             android:layout_weight="1"
             android:gravity="center|bottom"
-            android:orientation="vertical">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/boton_perfil_editar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/perfil_editar" />
-
-        </LinearLayout>
+            android:orientation="vertical"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -79,6 +79,7 @@ public class BuscarDonantes extends Fragment {
         btn_filtros = (Button) view.findViewById(R.id.btn_aplicar_filtros);
         btn_compatibles = (Button) view.findViewById(R.id.btn_compatibles);
 
+
         btn_filtros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +118,8 @@ public class BuscarDonantes extends Fragment {
         intent = getActivity().getIntent();
         Bundle bundle = intent.getExtras();
         donante_logueado = (Donantes)bundle.get("Donante");
+
+        btn_compatibles.setText("Compatibles con " + donante_logueado.getGrupo_Sanguineo());
 
         yoDonoViewModel = new ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory
