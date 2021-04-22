@@ -30,6 +30,7 @@ public class SolicitudIndividual extends AppCompatActivity {
     private Button boton_participar;
     private Solicitudes solicitud;
     private Donantes donante_logueado;
+    private CompatibilidadSanguinea compatibilidadSanguinea;
     private YoDonoViewModel yoDonoViewModel;
 
     @Override
@@ -46,13 +47,18 @@ public class SolicitudIndividual extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         solicitud =  (Solicitudes) bundle.get("Solicitud");
         donante_logueado = (Donantes) bundle.get("Donante");
+        compatibilidadSanguinea = new CompatibilidadSanguinea();
 
 
         text_id = (TextView)findViewById(R.id.SolicitudIndividualID);
         text_id.setText( "# " + solicitud.getId() );
 
         text_fecha = (TextView)findViewById(R.id.SolicitudIndividualFechaLim);
-        text_fecha.setText( solicitud.getFecha_limite());
+        String fecha = solicitud.getFecha_limite();
+        String anio = fecha.substring(0,4);
+        String mes = fecha.substring(4,6);
+        String dia = fecha.substring(6, 8);
+        text_fecha.setText( dia + "/" + mes + "/" + anio );
 
         text_departamento = (TextView)findViewById(R.id.SolicitudIndividualDepartamento);
         text_departamento.setText( solicitud.getDepartamento());
@@ -74,9 +80,15 @@ public class SolicitudIndividual extends AppCompatActivity {
         if ( donante_logueado.getCedula().compareTo( solicitud.getCedula()) == 0 ) {
             boton_participar.setVisibility(View.GONE);
         }
-        else if ( ! puedeParticipar( solicitud.getId() ) )
+        else if ( ! solicitudAbierta( solicitud.getId() ))
         {
-            deshabilitarBotonParticipar();
+            deshabilitarBotonParticipar( "Solicitud completa");
+        }
+        else if ( yaParticipa( solicitud.getId())) {
+            deshabilitarBotonParticipar( "Ya participa");
+        }
+        else if ( ! esCompatible( solicitud.getGrupo_sanguineo(), donante_logueado.getGrupo_Sanguineo() )) {
+            deshabilitarBotonParticipar( "No es compatible con " + solicitud.getGrupo_sanguineo() );
         }
 
         boton_participar.setOnClickListener(new View.OnClickListener() {
@@ -87,51 +99,52 @@ public class SolicitudIndividual extends AppCompatActivity {
                                 solicitud.getId(),
                                 donante_logueado.getCedula()));
 
-                deshabilitarBotonParticipar();
+                deshabilitarBotonParticipar( "Ya participa" );
                 String donaciones_previas = text_cantidad_donaciones.getText().toString();
                 Integer donaciones_nuevas = Integer.parseInt( donaciones_previas ) + 1 ;
                 text_cantidad_donaciones.setText( donaciones_nuevas.toString() );
             }});
     }
 
-    private void deshabilitarBotonParticipar() {
+    private void deshabilitarBotonParticipar( String texto ) {
         boton_participar.setEnabled( false );
-        boton_participar.setText( "Ya participa" );
+        boton_participar.setText( texto );
         boton_participar.setBackgroundColor(Color.LTGRAY );
     }
-
 
     private Integer cantidadDonaciones( Integer id ) {
         return yoDonoViewModel.getDonaciones( id ).size();
     }
 
-    private Boolean puedeParticipar( Integer id ) {
-
-        List<SolicitudConDonantes> solicitudConDonantes = yoDonoViewModel.getDonaciones( id );
-
-        Integer cantidad_donantes_necesarios = Integer.parseInt( solicitud.getCantidad_donantes() );
-        String cedula_donante = donante_logueado.getCedula();
-
-        Boolean ya_participa = false;
-
-        for ( SolicitudConDonantes donacion : solicitudConDonantes )
-        {
-            if ( donacion.cedula.compareTo( cedula_donante ) == 0 )
-            {
-                ya_participa = true;
-            }
-        }
-        if ( ya_participa )
-        {
+    private Boolean esCompatible( String grupo_receptor, String grupo_donantes ) {
+        if ( ! compatibilidadSanguinea.esCompatible(grupo_receptor, grupo_donantes )) {
             return false;
         }
-        else if ( solicitudConDonantes.size() < cantidad_donantes_necesarios )
+        return true;
+    }
+
+    private Boolean yaParticipa( Integer id ) {
+       List<SolicitudConDonantes> solicitudConDonantes = yoDonoViewModel.getDonaciones( id );
+        Boolean ya_participa = false;
+
+       for ( SolicitudConDonantes donacion : solicitudConDonantes )
+       {
+           if ( donacion.cedula.compareTo( donante_logueado.getCedula() ) == 0 )
+           {
+               ya_participa = true;
+           }
+       }
+       return ya_participa;
+    }
+
+    private Boolean solicitudAbierta( Integer id ) {
+        List<SolicitudConDonantes> solicitudConDonantes = yoDonoViewModel.getDonaciones( id );
+        Integer cantidad_donantes_necesarios = Integer.parseInt( solicitud.getCantidad_donantes() );
+
+        if ( solicitudConDonantes.size() < cantidad_donantes_necesarios )
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 }
