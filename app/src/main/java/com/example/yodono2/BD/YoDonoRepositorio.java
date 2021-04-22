@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.example.yodono2.Entidades.DonanteConSolicitudes;
 import com.example.yodono2.Entidades.Donantes;
+import com.example.yodono2.Entidades.Notificaciones;
 import com.example.yodono2.Entidades.Relaciones.SolicitudConDonantes;
 import com.example.yodono2.Entidades.Solicitudes;
 import com.example.yodono2.daos.DonanteDao;
@@ -21,8 +22,11 @@ public class YoDonoRepositorio {
     private SolicitudesDao solicitudesDao;
     private LiveData<List<Solicitudes>> listaSolicitudes;
 
+    private LiveData<List<Notificaciones>> listaNotificaciones;
+
     private SolicitudConDonantesDao solicitudConDonantesDao;
     private List<SolicitudConDonantes> listaSolicitudConDonantes;
+
 
     public YoDonoRepositorio(Application application) {
         AppDatabase database = AppDatabase.getInstance(application);
@@ -32,6 +36,8 @@ public class YoDonoRepositorio {
 
         listaDonantes = donanteDao.getAllDonanantes();
         listaSolicitudes = solicitudesDao.getAllSolicitudes();
+
+        //listaNotificaciones = solicitudesDao.getNotificaciones();
 
         listaSolicitudConDonantes = solicitudConDonantesDao.getDonaciones();
     }
@@ -136,5 +142,43 @@ public class YoDonoRepositorio {
 
     public LiveData<List<Solicitudes>> getSolicitudesNotLogueado( String cedula ) {
         return solicitudesDao.getSolicitudesNotLogueado( cedula );
+    }
+
+
+
+    public void insert(Notificaciones notificacion) {
+        new InsertNotificacionesAsyncTask(solicitudesDao).execute(notificacion);
+    }
+
+    private static class InsertNotificacionesAsyncTask extends AsyncTask<Notificaciones, Void, Void> {
+        private SolicitudesDao solicitudesDao;
+
+        private InsertNotificacionesAsyncTask( SolicitudesDao solicitudesDao ) {
+            this.solicitudesDao = solicitudesDao;
+        }
+
+        @Override
+        protected Void doInBackground(Notificaciones... notificacion) {
+            solicitudesDao.AgregarNotificacion(notificacion[0]);
+            return null;
+        }
+    }
+
+    private static class UpdateNotificacionesAsyncTask extends AsyncTask<Notificaciones, Void, Void> {
+        private SolicitudesDao solicitudesDao;
+
+        private UpdateNotificacionesAsyncTask( SolicitudesDao solicitudesDao ) {
+            this.solicitudesDao = solicitudesDao;
+        }
+
+        @Override
+        protected Void doInBackground(Notificaciones... notificacion) {
+            solicitudesDao.ActualizarNotificacion(notificacion[0]);
+            return null;
+        }
+    }
+
+    public LiveData<List<Notificaciones>> getListaNotificaciones(String cedula){
+        return solicitudesDao.getNotificaciones(cedula);
     }
 }

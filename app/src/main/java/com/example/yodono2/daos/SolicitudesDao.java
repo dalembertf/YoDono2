@@ -8,6 +8,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
+import com.example.yodono2.Entidades.Notificaciones;
 import com.example.yodono2.Entidades.Solicitudes;
 
 //Representa la interface por la cual realizamos las interacciones con la BD
@@ -28,4 +29,17 @@ public interface SolicitudesDao {
 
     @Query("SELECT * FROM  Solicitudes WHERE cedula != :cedula")
     LiveData<List<Solicitudes>> getSolicitudesNotLogueado( String cedula );
+
+    // ----------Notificaciones---------
+
+    @Insert
+    void AgregarNotificacion(Notificaciones notificacion);
+
+    @Update
+    void ActualizarNotificacion(Notificaciones notificacion);
+
+    @Query("SELECT * FROM Notificaciones where cedula = :cedula")
+    LiveData<List<Notificaciones>> getNotificaciones(String cedula);
+
+
 }
