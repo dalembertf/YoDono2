@@ -56,7 +56,7 @@
     <fragment
         android:id="@+id/misSolicitudes"
         android:name="com.example.yodono2.MisSolicitudes"
-        android:label="fragment_mis_solicitudes"
+        android:label="Mis Solicitudes"
         tools:layout="@layout/fragment_mis_solicitudes" />
 
 </navigation>
