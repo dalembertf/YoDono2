@@ -28,10 +28,9 @@ public class Solicitudes implements Serializable {
     private String motivo;
     private String cantidad_donantes;
     private String departamento;
-    private boolean completado;
 
     public Solicitudes(){}
-    public Solicitudes(String cedula, String nombre, String apellido, String grupo_sanguineo, String hospital, String fecha_Limite, String motivo, String cantidad_donantes, String departamento, boolean completado ) {
+    public Solicitudes(String cedula, String nombre, String apellido, String grupo_sanguineo, String hospital, String fecha_Limite, String motivo, String cantidad_donantes, String departamento ) {
 
         this.cedula = cedula;
         this.nombre = nombre;
@@ -42,7 +41,6 @@ public class Solicitudes implements Serializable {
         this.motivo = motivo;
         this.cantidad_donantes = cantidad_donantes;
         this.departamento = departamento;
-        this.completado = false;
     }
 
     public Integer getId() {
@@ -123,14 +121,6 @@ public class Solicitudes implements Serializable {
 
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
-    }
-
-    public boolean isCompletado() {
-        return completado;
-    }
-
-    public void setCompletado(boolean completado) {
-        this.completado = completado;
     }
 
     public String toString() {

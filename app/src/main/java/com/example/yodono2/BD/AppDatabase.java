@@ -16,7 +16,7 @@ import com.example.yodono2.daos.SolicitudConDonantesDao;
 import com.example.yodono2.daos.SolicitudesDao;
 
 
-@Database(entities = {Donantes.class, Solicitudes.class, SolicitudConDonantes.class}, version = 3)
+@Database(entities = {Donantes.class, Solicitudes.class, SolicitudConDonantes.class}, version = 2)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
