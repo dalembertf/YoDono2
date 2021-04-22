@@ -9,6 +9,7 @@ import androidx.room.TypeConverters;
 
 import com.example.yodono2.Entidades.Converters;
 import com.example.yodono2.Entidades.Donantes;
+import com.example.yodono2.Entidades.Notificaciones;
 import com.example.yodono2.Entidades.Relaciones.SolicitudConDonantes;
 import com.example.yodono2.Entidades.Solicitudes;
 import com.example.yodono2.daos.DonanteDao;
@@ -16,7 +17,7 @@ import com.example.yodono2.daos.SolicitudConDonantesDao;
 import com.example.yodono2.daos.SolicitudesDao;
 
 
-@Database(entities = {Donantes.class, Solicitudes.class, SolicitudConDonantes.class}, version = 2)
+@Database(entities = {Donantes.class, Solicitudes.class, Notificaciones.class, SolicitudConDonantes.class}, version = 3)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
