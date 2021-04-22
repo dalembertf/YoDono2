@@ -47,6 +47,7 @@ public class SolicitudIndividual extends AppCompatActivity {
         solicitud =  (Solicitudes) bundle.get("Solicitud");
         donante_logueado = (Donantes) bundle.get("Donante");
 
+
         text_id = (TextView)findViewById(R.id.SolicitudIndividualID);
         text_id.setText( "# " + solicitud.getId() );
 
@@ -70,8 +71,10 @@ public class SolicitudIndividual extends AppCompatActivity {
         text_hospital.setText( solicitud.getHospital());
 
         boton_participar = (Button)findViewById(R.id.BotonParticiparSolicitud);
-
-        if ( ! puedeParticipar( solicitud.getId() ) )
+        if ( donante_logueado.getCedula().compareTo( solicitud.getCedula()) == 0 ) {
+            boton_participar.setVisibility(View.GONE);
+        }
+        else if ( ! puedeParticipar( solicitud.getId() ) )
         {
             deshabilitarBotonParticipar();
         }
