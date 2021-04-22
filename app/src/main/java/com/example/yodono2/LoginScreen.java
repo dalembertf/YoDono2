@@ -33,7 +33,6 @@ public class LoginScreen extends AppCompatActivity {
 
     private int  CHANNEL_ID = 1;
     private String  channelID = "channelID";
-    private Solicitudes solicitud;
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -63,8 +62,6 @@ public class LoginScreen extends AppCompatActivity {
         Intent intent = new Intent(this, SolicitudIndividual.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-        //Bundle bundle = intent.getExtras();
-        //solicitud =  (Solicitudes) bundle.get("Solicitud");
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID)
                 .setSmallIcon(R.drawable.yodono_favicon)
@@ -75,6 +72,7 @@ public class LoginScreen extends AppCompatActivity {
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
+
 
 
         //dataBase = AppDatabase.getInstance( LoginScreen.this );
