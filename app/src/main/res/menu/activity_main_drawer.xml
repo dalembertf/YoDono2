@@ -13,7 +13,7 @@
 
             android:title="@string/menu_gallery" />
         <item
-            android:id="@+id/nav_mi_solicitud"
+            android:id="@+id/misSolicitudes"
 
             android:title="Mis Solicitudes" />
         <item

@@ -14,7 +14,11 @@
         android:id="@+id/perfil"
         android:name="com.example.yodono2.Perfil"
         android:label="Perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfil_to_perfilEditar"
+            app:destination="@id/perfilEditar" />
+    </fragment>
     <fragment
         android:id="@+id/perfilEditar"
         android:name="com.example.yodono2.PerfilEditar"
@@ -34,7 +38,11 @@
         android:id="@+id/solicitudNueva"
         android:name="com.example.yodono2.SolicitudNueva"
         android:label="Nueva Solicitud"
-        tools:layout="@layout/fragment_solicitud_nueva" />
+        tools:layout="@layout/fragment_solicitud_nueva" >
+        <action
+            android:id="@+id/action_solicitudNueva_to_misSolicitudes"
+            app:destination="@id/misSolicitudes" />
+    </fragment>
     <fragment
         android:id="@+id/donantesFiltros"
         android:name="com.example.yodono2.BuscarDonantes"
@@ -45,5 +53,10 @@
         android:name="com.example.yodono2.mapaCentros"
         android:label="Centros de donación"
         tools:layout="@layout/fragment_mapa_centros" />
+    <fragment
+        android:id="@+id/misSolicitudes"
+        android:name="com.example.yodono2.MisSolicitudes"
+        android:label="fragment_mis_solicitudes"
+        tools:layout="@layout/fragment_mis_solicitudes" />
 
 </navigation>
