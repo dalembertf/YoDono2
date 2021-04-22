@@ -40,4 +40,8 @@ public class CompatibilidadSanguinea {
         }
         return gruposSanguineosDonante;
     }
+
+    public Boolean esCompatible ( String grupo_receptor, String grupo_donante ) {
+        return getGruposCompatibles( grupo_receptor ).contains( grupo_donante );
+    }
 }
