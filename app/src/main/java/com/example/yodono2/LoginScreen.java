@@ -63,8 +63,8 @@ public class LoginScreen extends AppCompatActivity {
         Intent intent = new Intent(this, SolicitudIndividual.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-        Bundle bundle = intent.getExtras();
-        solicitud =  (Solicitudes) bundle.get("Solicitud");
+        //Bundle bundle = intent.getExtras();
+        //solicitud =  (Solicitudes) bundle.get("Solicitud");
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID)
                 .setSmallIcon(R.drawable.yodono_favicon)
