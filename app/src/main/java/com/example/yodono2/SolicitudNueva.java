@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,6 +72,8 @@ public class SolicitudNueva extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        final NavController navController = Navigation.findNavController(view);
+
         TextView miGrupoSanguineo = (TextView)view.findViewById(R.id.text_miGrupoSanguineo);
         miGrupoSanguineo.setText(donante_logueado.getGrupo_Sanguineo());
 
@@ -78,7 +82,7 @@ public class SolicitudNueva extends Fragment {
         TextView miDepartamento = (TextView)view.findViewById(R.id.text_miDepartamento);
         miDepartamento.setText(donante_logueado.getDepartamento());
 
-        boton_solicitar_aceptar = (Button)view.findViewById(R.id.boton_solicitar_aceptar);
+        Button boton_solicitar_aceptar = (Button)view.findViewById(R.id.boton_solicitar_aceptar);
 
         boton_solicitar_aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +128,7 @@ public class SolicitudNueva extends Fragment {
 
                     Toast.makeText(getActivity(), "Solicitud Agregada", Toast.LENGTH_SHORT).show();
 
+                    navController.navigate(R.id.misSolicitudes);
 
                 }
 
