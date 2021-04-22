@@ -100,8 +100,6 @@ public class SolicitudNueva extends Fragment {
                 String apellido = donante_logueado.getApellido();
                 String departamento = donante_logueado.getDepartamento();
                 String grupo_sanguineo = donante_logueado.getGrupo_Sanguineo();
-                Boolean completado = false;
-
 
                 picker_fecha_limite = (DatePicker)view.findViewById(R.id.fecha_limite);
                 Integer mes_i, dia_i, anio_i;
@@ -124,7 +122,7 @@ public class SolicitudNueva extends Fragment {
                 else
                 {
 
-                    Solicitudes nueva_solicitud = new Solicitudes( cedula, nombre, apellido, grupo_sanguineo, hospital, fecha, motivo, cantidad, departamento, completado );
+                    Solicitudes nueva_solicitud = new Solicitudes( cedula, nombre, apellido, grupo_sanguineo, hospital, fecha, motivo, cantidad, departamento );
 
                     yoDonoViewModel.insert( nueva_solicitud );
 
