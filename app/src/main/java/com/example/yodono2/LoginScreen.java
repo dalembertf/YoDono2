@@ -2,6 +2,7 @@ package com.example.yodono2;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.yodono2.Entidades.Donantes;
+import com.example.yodono2.Entidades.Solicitudes;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -31,6 +33,7 @@ public class LoginScreen extends AppCompatActivity {
 
     private int  CHANNEL_ID = 1;
     private String  channelID = "channelID";
+    private Solicitudes solicitud;
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -57,13 +60,21 @@ public class LoginScreen extends AppCompatActivity {
         createNotificationChannel();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
+        Intent intent = new Intent(this, SolicitudIndividual.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        Bundle bundle = intent.getExtras();
+        solicitud =  (Solicitudes) bundle.get("Solicitud");
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID)
                 .setSmallIcon(R.drawable.yodono_favicon)
                 .setContentTitle("Notificacion de Donante")
                 .setContentText("")
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Usted tiene una donacion pendiente"))
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
+                        .bigText("Su solicituds ha sido completada"))
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
 
 
         //dataBase = AppDatabase.getInstance( LoginScreen.this );
