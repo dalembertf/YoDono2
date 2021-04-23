@@ -164,6 +164,10 @@ public class YoDonoRepositorio {
         }
     }
 
+    public void update(Notificaciones notificacion) {
+        new UpdateNotificacionesAsyncTask(solicitudesDao).execute(notificacion);
+    }
+
     private static class UpdateNotificacionesAsyncTask extends AsyncTask<Notificaciones, Void, Void> {
         private SolicitudesDao solicitudesDao;
 

@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.yodono2.Entidades.Donantes;
+import com.example.yodono2.Entidades.Notificaciones;
 import com.example.yodono2.Entidades.Relaciones.SolicitudConDonantes;
 import com.example.yodono2.Entidades.Solicitudes;
 
@@ -30,6 +31,7 @@ public class SolicitudIndividual extends AppCompatActivity {
     private Button boton_participar;
     private Solicitudes solicitud;
     private Donantes donante_logueado;
+    private Notificaciones notificacion;
     private CompatibilidadSanguinea compatibilidadSanguinea;
     private YoDonoViewModel yoDonoViewModel;
 
@@ -49,6 +51,7 @@ public class SolicitudIndividual extends AppCompatActivity {
         donante_logueado = (Donantes) bundle.get("Donante");
         compatibilidadSanguinea = new CompatibilidadSanguinea();
 
+        notificacion = new Notificaciones(solicitud.getId(),donante_logueado.getCedula(),true);
 
         text_id = (TextView)findViewById(R.id.SolicitudIndividualID);
         text_id.setText( "# " + solicitud.getId() );
@@ -83,6 +86,7 @@ public class SolicitudIndividual extends AppCompatActivity {
         else if ( ! solicitudAbierta( solicitud.getId() ))
         {
             deshabilitarBotonParticipar( "Solicitud completa");
+            yoDonoViewModel.insert(notificacion);
         }
         else if ( yaParticipa( solicitud.getId())) {
             deshabilitarBotonParticipar( "Ya participa");

@@ -17,8 +17,7 @@ public class Notificaciones implements Serializable {
 
     private Boolean enviado;
 
-    public Notificaciones(int id, int idSolicitud, String cedula, Boolean enviado) {
-        this.id = id;
+    public Notificaciones(int idSolicitud, String cedula, Boolean enviado) {
         this.idSolicitud = idSolicitud;
         this.cedula = cedula;
         this.enviado = enviado;

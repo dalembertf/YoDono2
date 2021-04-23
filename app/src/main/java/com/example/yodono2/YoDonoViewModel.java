@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.yodono2.BD.YoDonoRepositorio;
 import com.example.yodono2.Entidades.Donantes;
+import com.example.yodono2.Entidades.Notificaciones;
 import com.example.yodono2.Entidades.Relaciones.SolicitudConDonantes;
 import com.example.yodono2.Entidades.Solicitudes;
 
@@ -18,6 +19,7 @@ public class YoDonoViewModel extends AndroidViewModel {
     private YoDonoRepositorio repositorio;
     private LiveData<List<Donantes>> lista_donantes;
     private LiveData<List<Solicitudes>> lista_solicitudes;
+    private LiveData<List<Notificaciones>> lista_Notificaciones;
 
     public YoDonoViewModel(@NonNull Application application) {
         super(application);
@@ -83,6 +85,19 @@ public class YoDonoViewModel extends AndroidViewModel {
 
     public void agregarDonacion( SolicitudConDonantes solicitudConDonantes ) {
         repositorio.agregarDonacion( solicitudConDonantes );
+    }
+
+    //-------------------Notificaciones-----------------------------//
+    public void insert(Notificaciones notificacion){
+        repositorio.insert(notificacion);
+    }
+
+    public void update(Notificaciones notificacion){
+        repositorio.update(notificacion);
+    }
+
+    public LiveData<List<Notificaciones>> getLista_Notificaciones(String cedula){
+        return repositorio.getListaNotificaciones(cedula);
     }
 
 
