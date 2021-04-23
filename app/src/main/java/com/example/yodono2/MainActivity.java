@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                         .setContentTitle("Notificacion de Donante")
                         .setContentText("")
                         .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText("Su solicitud ha sido completada  " + id.toString() ))
+                                .bigText("Su solicitud #" + id.toString()+ " ha sido completada." ))
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
                         .setContentIntent(pendingIntent)
                         .setAutoCancel(true);
@@ -133,11 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
                 notificationManager.notify(CHANNEL_ID, builder.build());
             }
-
-        } else{
-            Toast.makeText(MainActivity.this,"no hay notificacion", Toast.LENGTH_LONG);
         }
-
     }
 
     @Override

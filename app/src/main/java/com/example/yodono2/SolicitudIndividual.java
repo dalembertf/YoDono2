@@ -47,11 +47,11 @@ public class SolicitudIndividual extends AppCompatActivity {
 
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
-        solicitud =  (Solicitudes) bundle.get("Solicitud");
         donante_logueado = (Donantes) bundle.get("Donante");
+        solicitud =  (Solicitudes) bundle.get("Solicitud");
         compatibilidadSanguinea = new CompatibilidadSanguinea();
 
-        notificacion = new Notificaciones(solicitud.getId(),donante_logueado.getCedula());
+        notificacion = new Notificaciones(solicitud.getId(),solicitud.getCedula());
 
         text_id = (TextView)findViewById(R.id.SolicitudIndividualID);
         text_id.setText( "# " + solicitud.getId() );

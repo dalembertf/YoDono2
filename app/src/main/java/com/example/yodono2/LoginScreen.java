@@ -22,29 +22,13 @@ import com.example.yodono2.Entidades.Solicitudes;
 
 public class LoginScreen extends AppCompatActivity {
 
-    //DonanteDao db;
-    //AppDatabase dataBase;
-
     Button boton_iniciar_sesion;
 
     private AppBarConfiguration mAppBarConfiguration;
 
     private YoDonoViewModel yoDonoViewModel;
 
-    private int  CHANNEL_ID = 1;
-    private String  channelID = "channelID";
 
-    private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = getString(R.string.channel_name);
-            String description = getString(R.string.channel_description);
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-            NotificationChannel channel = new NotificationChannel(channelID, name, importance);
-            channel.setDescription(description);
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,28 +39,6 @@ public class LoginScreen extends AppCompatActivity {
                 ViewModelProvider.AndroidViewModelFactory
                         .getInstance(this.getApplication()))
                 .get(YoDonoViewModel.class);
-
-        createNotificationChannel();
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-
-        Intent intent = new Intent(this, SolicitudIndividual.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID)
-                .setSmallIcon(R.drawable.yodono_favicon)
-                .setContentTitle("Notificacion de Donante")
-                .setContentText("")
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Su solicituds ha sido completada"))
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setContentIntent(pendingIntent)
-                .setAutoCancel(true);
-
-
-
-        //dataBase = AppDatabase.getInstance( LoginScreen.this );
-        //db = dataBase.getDonanteDao();
 
         boton_iniciar_sesion = (Button)findViewById(R.id.boton_inicio_sesion);
 
@@ -93,7 +55,7 @@ public class LoginScreen extends AppCompatActivity {
                 Donantes donante = yoDonoViewModel.buscarDonante( cedula, contrasena );
                 if ( donante != null )
                 {
-                    notificationManager.notify(CHANNEL_ID, builder.build());
+                    Toast.makeText(LoginScreen.this, "Bienvenido " + donante.getNombre() , Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(LoginScreen.this, MainActivity.class);
                     i.putExtra( "Donante", donante );
                     startActivity(i);
