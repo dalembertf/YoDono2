@@ -86,6 +86,7 @@ public class SolicitudIndividual extends AppCompatActivity {
         else if ( ! solicitudAbierta( solicitud.getId() ))
         {
             deshabilitarBotonParticipar( "Solicitud completa");
+            //crea notificacion pendiente en tabla
             yoDonoViewModel.insert(notificacion);
         }
         else if ( yaParticipa( solicitud.getId())) {
