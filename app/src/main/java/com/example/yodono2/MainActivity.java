@@ -118,7 +118,8 @@ public class MainActivity extends AppCompatActivity {
                 intentNotificacion.putExtra("Solicitud", solicitudCompletada);
                 intentNotificacion.putExtra( "Donante", donante_logueado );
                 intentNotificacion.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intentNotificacion, 0);
+                PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intentNotificacion, PendingIntent.FLAG_UPDATE_CURRENT);
+
 
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID)
                         .setSmallIcon(R.drawable.yodono_favicon)
