@@ -51,7 +51,7 @@ public class SolicitudIndividual extends AppCompatActivity {
         donante_logueado = (Donantes) bundle.get("Donante");
         compatibilidadSanguinea = new CompatibilidadSanguinea();
 
-        notificacion = new Notificaciones(solicitud.getId(),donante_logueado.getCedula(),true);
+        notificacion = new Notificaciones(solicitud.getId(),donante_logueado.getCedula());
 
         text_id = (TextView)findViewById(R.id.SolicitudIndividualID);
         text_id.setText( "# " + solicitud.getId() );
@@ -86,8 +86,6 @@ public class SolicitudIndividual extends AppCompatActivity {
         else if ( ! solicitudAbierta( solicitud.getId() ))
         {
             deshabilitarBotonParticipar( "Solicitud completa");
-            //crea notificacion pendiente en tabla
-            yoDonoViewModel.insert(notificacion);
         }
         else if ( yaParticipa( solicitud.getId())) {
             deshabilitarBotonParticipar( "Ya participa");
@@ -108,6 +106,10 @@ public class SolicitudIndividual extends AppCompatActivity {
                 String donaciones_previas = text_cantidad_donaciones.getText().toString();
                 Integer donaciones_nuevas = Integer.parseInt( donaciones_previas ) + 1 ;
                 text_cantidad_donaciones.setText( donaciones_nuevas.toString() );
+                if ( ! solicitudAbierta( solicitud.getId() )) {
+                    //crea notificacion pendiente en tabla
+                    yoDonoViewModel.insert(notificacion);
+                }
             }});
     }
 

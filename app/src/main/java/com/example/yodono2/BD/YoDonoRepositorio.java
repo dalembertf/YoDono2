@@ -144,6 +144,10 @@ public class YoDonoRepositorio {
         return solicitudesDao.getSolicitudesNotLogueado( cedula );
     }
 
+    public Solicitudes getSolicitud(int id){
+        return solicitudesDao.getSolicitud(id);
+    }
+
 
 
     public void insert(Notificaciones notificacion) {
@@ -182,7 +186,7 @@ public class YoDonoRepositorio {
         }
     }
 
-    public LiveData<List<Notificaciones>> getListaNotificaciones(String cedula){
+    public List<Notificaciones> getListaNotificaciones(String cedula){
         return solicitudesDao.getNotificaciones(cedula);
     }
 }

@@ -30,6 +30,9 @@ public interface SolicitudesDao {
     @Query("SELECT * FROM  Solicitudes WHERE cedula != :cedula")
     LiveData<List<Solicitudes>> getSolicitudesNotLogueado( String cedula );
 
+    @Query("SELECT * FROM Solicitudes where id = :id")
+    Solicitudes getSolicitud(int id);
+
     // ----------Notificaciones---------
 
     @Insert
@@ -38,8 +41,9 @@ public interface SolicitudesDao {
     @Update
     void ActualizarNotificacion(Notificaciones notificacion);
 
-    @Query("SELECT * FROM Notificaciones where cedula = :cedula")
-    LiveData<List<Notificaciones>> getNotificaciones(String cedula);
+    @Query("SELECT * FROM Notificaciones where cedula = :cedula and enviado = 0")
+    List<Notificaciones> getNotificaciones(String cedula);
+
 
 
 }

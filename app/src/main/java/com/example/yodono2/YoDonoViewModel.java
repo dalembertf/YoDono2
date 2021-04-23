@@ -87,6 +87,10 @@ public class YoDonoViewModel extends AndroidViewModel {
         repositorio.agregarDonacion( solicitudConDonantes );
     }
 
+    public Solicitudes getSolicitud(int id){
+        return repositorio.getSolicitud(id);
+    }
+
     //-------------------Notificaciones-----------------------------//
     public void insert(Notificaciones notificacion){
         repositorio.insert(notificacion);
@@ -96,7 +100,7 @@ public class YoDonoViewModel extends AndroidViewModel {
         repositorio.update(notificacion);
     }
 
-    public LiveData<List<Notificaciones>> getLista_Notificaciones(String cedula){
+    public List<Notificaciones> getLista_Notificaciones(String cedula){
         return repositorio.getListaNotificaciones(cedula);
     }
 

@@ -12,15 +12,12 @@ public class Notificaciones implements Serializable {
     private int id;
     private int idSolicitud;
     private String cedula;
-
-
-
     private Boolean enviado;
 
-    public Notificaciones(int idSolicitud, String cedula, Boolean enviado) {
+    public Notificaciones(int idSolicitud, String cedula) {
         this.idSolicitud = idSolicitud;
         this.cedula = cedula;
-        this.enviado = enviado;
+        this.enviado = false;
     }
 
     public int getId() {
