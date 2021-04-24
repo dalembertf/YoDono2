@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/informacion"
         android:name="com.example.yodono2.Informacion"
-        android:label="Info"
+        android:label="Informacion"
         tools:layout="@layout/fragment_informacion" />
     <activity
         android:id="@+id/welcome"
