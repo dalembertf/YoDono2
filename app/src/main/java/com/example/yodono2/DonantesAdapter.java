@@ -30,6 +30,7 @@ public class DonantesAdapter extends RecyclerView.Adapter<DonantesAdapter.Donant
         holder.textViewNombre.setText(donante_actual.getNombre() + " " + donante_actual.getApellido());
         holder.textViewGrupo.setText(donante_actual.getGrupo_Sanguineo());
         holder.textViewDepartamento.setText(donante_actual.getDepartamento());
+        holder.textViewEmail.setText(donante_actual.getEmail());
 
     }
 
@@ -47,12 +48,14 @@ public class DonantesAdapter extends RecyclerView.Adapter<DonantesAdapter.Donant
         private TextView textViewNombre;
         private TextView textViewGrupo;
         private TextView textViewDepartamento;
+        private TextView textViewEmail;
 
         public DonanteHolder(@NonNull View itemView) {
             super(itemView);
             textViewNombre = itemView.findViewById(R.id.BDnombreTV);
             textViewGrupo = itemView.findViewById(R.id.BDgrupoTV);
             textViewDepartamento = itemView.findViewById(R.id.BDdepartamentoTV);
+            textViewEmail = itemView.findViewById(R.id.BDEmailTV);
         }
     }
 }
