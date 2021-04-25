@@ -107,7 +107,7 @@
      guidetolerance="10"
      id="base"
      inkscape:current-layer="layer1"
-     inkscape:cx="544.68787"
+     inkscape:cx="960"
      inkscape:cy="398.34157"
      inkscape:document-rotation="0"
      inkscape:document-units="px"
@@ -119,7 +119,7 @@
      inkscape:window-width="1920"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:zoom="0.5"
+     inkscape:zoom="0.89635417"
      objecttolerance="10"
      pagecolor="#ffffff"
      showgrid="false" />
@@ -140,13 +140,6 @@
      inkscape:groupmode="layer"
      inkscape:label="Layer 1"
      transform="translate(1.9328e-3,0)">
-    <rect
-       height="816.9436"
-       id="rect"
-       style="opacity:1;fill:#c2c2c2;stroke-width:1.05712"
-       width="713.17218"
-       x="1206.8259"
-       y="3.0563376" />
     <text
        id="text24"
        style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect26);"
@@ -154,36 +147,40 @@
     <text
        xml:space="preserve"
        style="font-size:40px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New'"
-       x="1325.998"
-       y="254"
+       x="1229.998"
+       y="266"
        id="text28"><tspan
          sodipodi:role="line"
          id="tspan26"
-         x="1325.998"
-         y="254">Bienvenidos a YoDOno</tspan><tspan
+         x="1229.998"
+         y="266">Bienvenidos a YoDono</tspan><tspan
          sodipodi:role="line"
-         x="1325.998"
-         y="304"
+         x="1229.998"
+         y="316"
          id="tspan30" /><tspan
          sodipodi:role="line"
-         x="1325.998"
-         y="354"
-         id="tspan32">Si ya tiene un usuario</tspan><tspan
+         x="1229.998"
+         y="366"
+         id="tspan32">Si ya tiene un usuario,</tspan><tspan
          sodipodi:role="line"
-         x="1325.998"
-         y="404"
-         id="tspan34">Puede iniciar sesión,</tspan><tspan
+         x="1229.998"
+         y="416"
+         id="tspan34">Puede iniciar sesión.</tspan><tspan
          sodipodi:role="line"
-         x="1325.998"
-         y="454"
+         x="1229.998"
+         y="466"
          id="tspan36" /><tspan
          sodipodi:role="line"
-         x="1325.998"
-         y="504"
+         x="1229.998"
+         y="516"
          id="tspan38">De lo contrario puede</tspan><tspan
          sodipodi:role="line"
-         x="1325.998"
-         y="554"
-         id="tspan40">Registrarse</tspan></text>
+         x="1229.998"
+         y="566"
+         id="tspan40">Registrarse en nuestra app.</tspan><tspan
+         sodipodi:role="line"
+         x="1229.998"
+         y="616"
+         id="tspan42" /></text>
   </g>
 </svg>
