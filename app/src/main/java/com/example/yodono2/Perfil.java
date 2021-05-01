@@ -104,19 +104,7 @@ public class Perfil extends Fragment {
         TextView telefonoPerfil = (TextView)view.findViewById(R.id.PerfilTelefono);
         telefonoPerfil.setText(donante_logueado.getTelefono());
 
-
-
-
-        //Button btnEditar = view.findViewById((R.id.boton_perfil_editar));
-
         final NavController navController = Navigation.findNavController(view);
-
-        //btnEditar.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-        //        navController.navigate(R.id.perfilEditar);
-        //    }
-        //});
 
     }
 }

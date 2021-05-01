@@ -133,8 +133,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                 notificationManager.notify(CHANNEL_ID, builder.build());
-                //notificacion.setEnviado(Boolean.TRUE);
-                //yoDonoViewModel.update(notificacion);
             }
         }
     }

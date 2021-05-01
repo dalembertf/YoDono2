@@ -36,7 +36,6 @@ public class MisSolicitudes extends Fragment implements SolicitudesAdapter.OnSol
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView = view.findViewById(R.id.ListRecyclerViewSolicitudes);
-        //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         adapter = new SolicitudesAdapter( this );

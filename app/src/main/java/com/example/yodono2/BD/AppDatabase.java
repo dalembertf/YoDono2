@@ -36,8 +36,6 @@ public abstract class AppDatabase extends RoomDatabase {
         return instance;
     }
 
-    //private AppDatabase() {};
-
     private static AppDatabase create( final Context context ) {
 
         return Room.databaseBuilder( context, AppDatabase.class, DB_NAME ).allowMainThreadQueries().fallbackToDestructiveMigration().build();

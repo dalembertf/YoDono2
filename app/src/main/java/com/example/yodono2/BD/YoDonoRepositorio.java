@@ -18,12 +18,9 @@ public class YoDonoRepositorio {
 
     private DonanteDao donanteDao;
     private LiveData<List<Donantes>> listaDonantes;
-
     private SolicitudesDao solicitudesDao;
     private LiveData<List<Solicitudes>> listaSolicitudes;
-
     private LiveData<List<Notificaciones>> listaNotificaciones;
-
     private SolicitudConDonantesDao solicitudConDonantesDao;
     private List<SolicitudConDonantes> listaSolicitudConDonantes;
 
@@ -36,9 +33,6 @@ public class YoDonoRepositorio {
 
         listaDonantes = donanteDao.getAllDonanantes();
         listaSolicitudes = solicitudesDao.getAllSolicitudes();
-
-        //listaNotificaciones = solicitudesDao.getNotificaciones();
-
         listaSolicitudConDonantes = solicitudConDonantesDao.getDonaciones();
     }
 
