@@ -95,7 +95,7 @@ public class RegistroPaso_2 extends AppCompatActivity {
                         Donantes donante_a_registrar = new Donantes(cedula, contrasena, email, nombre, apellido, telefono, departamento, grupo_sanguineo);
 
                         yoDonoViewModel.insert( donante_a_registrar );
-                        Log.v("login", "exito");
+                        Toast.makeText(RegistroPaso_2.this, "Gracias por Registrarse!", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(RegistroPaso_2.this, MainActivity.class);
                         i.putExtra("Donante", donante_a_registrar );
                         startActivity(i);
